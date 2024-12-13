@@ -16,15 +16,72 @@ This default behavior can be overridden in multiple ways.
 3. Set the value to the URL you want to redirect users to.
 
 ```html
-<form action="https://submit-form.com/your-form-id">
-  <input
-    type="hidden"
-    name="_redirect"
-    value="https://your-website.com/thanks"
-  />
-  <input type="email" name="email" />
-  <button type="submit">Subscribe</button>
-</form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Subscribe to Our Newsletter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom right, #6a11cb, #2575fc);
+      color: white;
+      text-align: center;
+      padding: 2rem;
+    }
+    form {
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 10px;
+      padding: 2rem;
+      display: inline-block;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    }
+    input[type="email"] {
+      width: 80%;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+      border: none;
+      border-radius: 5px;
+    }
+    button {
+      background-color: #ff6f61;
+      color: white;
+      border: none;
+      padding: 0.8rem 2rem;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    button:hover {
+      background-color: #ff4c3b;
+    }
+    h1 {
+      margin-bottom: 1rem;
+    }
+    p {
+      font-size: 1rem;
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Subscribe to Our Newsletter!</h1>
+  <p>Be the first to know about our updates and exclusive offers.</p>
+
+  <form action="https://submit-form.com/your-form-id">
+    <!-- Redirect hidden input -->
+    <input type="hidden" name="_redirect" value="https://your-website.com/thank-you" />
+    <!-- Email input -->
+    <input type="email" name="email" placeholder="Enter your email" required />
+    <!-- Submit button -->
+    <button type="submit">Subscribe Now</button>
+  </form>
+
+</body>
+</html>
+
 ```
 
 By default, Formspark appends the submission's entries to the custom redirect URL (to its search string).
